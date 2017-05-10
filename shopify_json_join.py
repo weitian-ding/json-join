@@ -33,12 +33,10 @@ def json_inner_join(rows1, rows2, key1, key2):
 
             for key, value in row1.items():
                 joined[key] = value
-
             for key, value in rows2_sorted[rows2_pos].items():
                 joined[key] = value
 
             result.append(joined)
-
             rows2_pos += 1
 
         if rows2_pos >= len(rows2_sorted):
@@ -57,7 +55,6 @@ def main():
     inner_joined = json_inner_join(customers, orders, 'cid', 'customer_id')
 
     # compute the order total for Barry and Steve
-
     total_for_barry = 0
     total_for_steve = 0
 
@@ -69,7 +66,6 @@ def main():
 
     print('length is {0}, total for Barry is ${1}, total for Steve is ${2}'.format(len(inner_joined),
           total_for_barry, total_for_steve))
-
 
 
 if __name__ == '__main__':
